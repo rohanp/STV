@@ -22,6 +22,7 @@ Template.createElection.events({
                     }
                 });
                 alert("election created")
+                Router.go("/elections")
             } else {
                 alert("Please fill out all candidates")
             }
