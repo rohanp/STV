@@ -30,6 +30,18 @@ Router.route('/createElection', function() {
     name: 'createElection'
 });
 
+Router.route('/elections/:_id', function() {
+    name: 'viewPatient';
+    this.layout('ApplicationLayout');
+    this.render('viewElection', {
+        data: function() {
+            return Elections.findOne({
+                _id: this.params._id
+            });
+        }
+    });
+});
+
 Router.route('/elections', function() {
     this.layout('ApplicationLayout');
     this.render('elections');
