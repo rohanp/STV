@@ -1,0 +1,21 @@
+<template name="elections">
+    {{#each elections}}
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <h3>{{electionname}} <small>({{number}})</small></h3>
+            <h4>{{info}}</h4>
+            <div class="list-group">
+                <a href="#" class="list-group-item">
+                    {{candidates.candidate1}}
+                </a>
+                <a href="#" class="list-group-item">
+                    {{candidates.candidate2}}
+                </a>
+                <a href="#" class="list-group-item">
+                    {{candidates.candidate3}}
+                </a>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</template>
