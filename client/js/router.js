@@ -37,6 +37,14 @@ Router.route('/elections', function() {
     name: 'elections'
 });
 
+Router.route('/admin', function() {
+    this.layout('ApplicationLayout');
+    this.render('admin');
+}, {
+    name: 'admin'
+});
+
+
 ////////////
 //Accounts//
 ////////////

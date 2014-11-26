@@ -1,0 +1,42 @@
+<template name="admin">
+	<h3>Registered Users</h3>
+    <table class="table table-striped table-hover ">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each users}}
+            <tr>
+                <td>{{_id}}</td>
+                <td>{{profile.firstname}}</td>
+                <td>{{profile.lastname}}</td>
+            </tr>
+            {{/each}}
+
+        </tbody>
+    </table>
+    <h3>Elections</h3>
+    <table class="table table-striped table-hover ">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Number</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each elections}}
+            <tr>
+                <td>{{_id}}</td>
+                <td>{{electionname}}</td>
+                <td>{{number}}</td>
+            </tr>
+            {{/each}}
+
+        </tbody>
+    </table>
+</template>
