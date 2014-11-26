@@ -42,3 +42,15 @@ Template.elections.helpers({
         });
     }
 })
+
+Router.route('/elections/:_id', function() {
+    name: 'viewPatient';
+    this.layout('ApplicationLayout');
+    this.render('viewElection', {
+        data: function() {
+            return Elections.findOne({
+                _id: this.params._id
+            });
+        }
+    });
+});
