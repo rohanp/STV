@@ -1,3 +1,5 @@
+var oldNum=1;
+
 Template.createElection.events({
     'click .save': function() {
         var electionname = $("#name").val();
@@ -29,9 +31,34 @@ Template.createElection.events({
         } else {
             alert("Please fill out all Details")
         }
-    }
+    },
+    'change #number':function() {
+        console.log('change number');
+        var num = $('#number').val();
+        var container = $('#candidate-container');
+        var diff = num-oldNum;
 
+        console.log(diff);
+        if(diff>0){
+            for(var i=oldNum; i<num; i++){
+                var positionNum = parseInt(i)+1;
+                console.log("position " + positionNum);
+                container.append("<label class='control-label' for='title'>Position " + positionNum + "</label>\
+                 <input name='title' type='text' value='' placeholder='Name your position' class='form-control candidate'/>\
+                 ");
+            }
+        } else{
+            for(var i=0; i<-diff; i++){
+                $("#candidate-container input:last-child").remove();
+                $("#candidate-container label:last-child").remove();
+            }
+        }
+
+        oldNum = num;
+
+    }
 });
+
 
 Template.elections.helpers({
     elections: function() {
